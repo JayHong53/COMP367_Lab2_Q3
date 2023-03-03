@@ -18,7 +18,6 @@ pipeline {
           name('origin')
           url('https://github.com/JayHong53/COMP367_Lab2_Q3.git')
           refspec('+refs/heads/feature/*:refs/remotes/origin/feature/*')
-          Ï
         }
         branches('*/**')
         extensions {
