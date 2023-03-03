@@ -10,7 +10,7 @@ public class AppController {
 	@GetMapping("/")
 	public String getMain(Model model) {
 		
-		String title = "Welcome to COMP367";
+		String title = "Welcome to COMP367, Jiwoong";
 		String subTitle = "We learn Jenkins and it is fun!";
 		
 		model.addAttribute("title", title);
