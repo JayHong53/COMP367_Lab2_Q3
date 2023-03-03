@@ -8,7 +8,7 @@ pipeline {
     }
   }
   tools {
-    maven 'Maven 3.6.3'
+    maven 'MAVEN3'
   }
   options {
     skipDefaultCheckout()
