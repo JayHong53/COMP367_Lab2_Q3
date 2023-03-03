@@ -1,21 +1,21 @@
 pipeline {
-  agent any
-  tools {
-    maven 'MAVEN3'
-  }
-  options {
-    skipDefaultCheckout()
-  }
-  stages {
-    stage('Checkout') {
-      steps {
-        git branch: '*/**', url: 'https://github.com/JayHong53/COMP367_Lab2_Q3.git'
-      }
+    agent any
+
+    triggers {
+        pollSCM('*/5 * * * *')
     }
-    stage('Build with Maven') {
-      steps {
-        sh 'mvn compile'
-      }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/JayHong53/COMP367_Lab2_Q3.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
     }
-  }
 }
